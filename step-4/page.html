@@ -1,0 +1,64 @@
+<!doctype html>
+ <html>
+   <head>
+    
+     <style>
+     </style>
+   </head>
+   <body>
+     <div id="app">
+       <section id="singInAndSingUp" v-if="!currentUser">
+         <div>
+           <label><input type='radio' name='type' v-model="actionType" value='singUp'>注册</label> 
+           <label><input type='radio' name='type' v-model="actionType" value='singIn'>登录</label> 
+         </div>
+        <div class="singUp" v-if='actionType === "singUp"'>
+          <form @submit.prevent='singUpp'>
+            <div class="formRow">
+              用户名<input type="text" v-model='formData.username'>
+            </div>
+            <div class="formRow">
+              密码<input type="password" v-model='formData.password'>
+            </div>
+            <div>
+              <input type="submit" value='注册'>
+            </div>
+          </form>
+        </div>
+      <div class="login" v-if='actionType ==="singIn"'>
+        <form @submit.prevent='logIn'>
+             <div class="formRow">
+              用户名<input type="text" v-model='formData.username'>
+            </div>
+            <div class="formRow">
+              密码<input type="password" v-model='formData.password'>
+            </div>
+            <div>
+              <input type="submit" value='登录'>
+            </div>
+          
+        </form>
+      </div>
+       </section>
+       <section id="todo" v-if="currentUser">
+          <div class="newTask">
+           <input type="text" v-model='newTodo' @keypress.enter='addTodo'>
+           {{todoList}} 
+         <div>
+           
+           <ol class='todos'>
+             <li v-for='todo in todoList'>
+              <input type='checkbox' v-model='todo.done'>{{todo.title}}
+              <span v-if='todo.done'>已完成</span>
+              <span v-else>未完成</span>
+              <button @click='removeTodo(todo)'>&#10008;</button>
+             </li>
+           </ol>
+         
+       </section>
+    </div>
+
+     <script src="./dist/bundle.js"></script>
+   </body>
+ </html>
+
