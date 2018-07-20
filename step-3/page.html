@@ -1,0 +1,31 @@
+<!doctype html>
+ <html>
+   <head>
+    
+     <style>
+[v-cloak]{
+  display:none;
+}
+     </style>
+   </head>
+   <body>
+     <div id="app" v-cloak>
+       <div class="newTask">
+         <input type="text" v-model='newTodo' @keypress.enter='addTodo'>
+         {{todoList}} 
+       <div>
+         
+         <ol class='todos'>
+           <li v-for='todo in todoList'>
+            <input type='checkbox' v-model='todo.done'>{{todo.title}}
+            <span v-if='todo.done'>已完成</span>
+            <span v-else>未完成</span>
+            <button @click='removeTodo(todo)'>&#10008;</button>
+           </li>
+         </ol>
+     </div>
+
+     <script src="./dist/bundle.js"></script>
+   </body>
+ </html>
+
