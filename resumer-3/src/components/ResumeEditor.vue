@@ -8,7 +8,8 @@ export default {
     name:'ResumeEditor'
 }
 </script>
-<style lang="sass" scoped>
-    #resumeEditor
-        color:red
+<style lang="scss" scoped>
+    #resumeEditor{
+        color:red;
+    }
 </style>

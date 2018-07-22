@@ -9,6 +9,7 @@ export default {
 }
 </script>
 <style lang="sass" scoped>
-    #resumePreview
-        color:gray
+    div
+        background:yellow
+    
 </style>
