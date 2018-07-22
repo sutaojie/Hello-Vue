@@ -1,18 +1,23 @@
 <template>
   <div id="app">
-    <p><span>wo</span>{{text}}</p>
-    {{text}}
+    <Topbar/>
+    <ResumeEditor/>
+    <ResumePreview/>
   </div>
 </template>
 
 <script>
+import Topbar from './components/Topbar.vue'
+import ResumeEditor from './components/ResumeEditor'
+import ResumePreview from './components/ResumePreview'
 export default {
   name: 'App',
   data () {
     return { 
       text : '!'
     }
-  }
+  },
+  components:{Topbar,ResumeEditor,ResumePreview}
 }
 </script>
 
