@@ -16,6 +16,7 @@ import './assets/reset.css'
 import Topbar from './components/Topbar.vue'
 import ResumeEditor from './components/ResumeEditor'
 import ResumePreview from './components/ResumePreview'
+import icons from './assets/icons'
 export default {
   name: 'App',
   data () {
@@ -23,7 +24,10 @@ export default {
       text : '!'
     }
   },
-  components:{Topbar,ResumeEditor,ResumePreview}
+  components:{Topbar,ResumeEditor,ResumePreview},
+  created(){
+    document.body.insertAdjacentHTML('afterbegin', icons)
+  }
 }
 </script>
 
