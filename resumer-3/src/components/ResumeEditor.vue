@@ -26,10 +26,6 @@
                 </div>
                 
             </li>
-            <li>
-                {{count}}
-                <button @click="add" >test </button>
-            </li>
         </ol>
    </div>
 </template>
@@ -42,9 +38,6 @@ export default {
         }
     },
     computed:{
-        count(){
-            return this.$store.state.count
-        },
         selected:{
             get(){
                 return this.$store.state.selected
@@ -55,11 +48,6 @@ export default {
         },
         resume(){
             return this.$store.state.resume
-        }
-    },
-    methods:{
-        add(){
-            this.$store.commit('increment')
         }
     }
 }
