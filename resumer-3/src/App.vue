@@ -1,12 +1,18 @@
 <template>
-  <div id="app">
-    <Topbar/>
-    <ResumeEditor/>
-    <ResumePreview/>
+  <div class="page">
+    <header>
+      <Topbar/>
+    </header>
+    <main>
+      <ResumeEditor/>
+      <ResumePreview/>
+    </main>
   </div>
 </template>
 
 <script>
+import 'normalize.css/normalize.css'
+import './assets/reset.css'
 import Topbar from './components/Topbar.vue'
 import ResumeEditor from './components/ResumeEditor'
 import ResumePreview from './components/ResumePreview'
@@ -21,10 +27,29 @@ export default {
 }
 </script>
 
-<style lang='sass'>
-p
-  color:green
-  span
-    color:red
+<style lang='scss'>
+  .page{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #EAEBEC;
+    main{
+      min-width:1024px;
+      max-width:1440px;
+      margin-top:16px;
+      margin-bottom:16px;
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-around;
+    }
+    #resumeEditor{
+      width:35%;
+      background-color: #444444;
+    }
+    #resumePreview{
+      width:61%;
+      background-color: #777;
+    }
+  }
 
 </style>
