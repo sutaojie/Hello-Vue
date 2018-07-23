@@ -60,10 +60,9 @@ export default {
       background-color: #777;
     }
   }
-
-svg.icon{
-  height:1em;
-  width:1em;
+svg{
+  width:2em;
+  height:2em;
   fill:currentColor;
   vertical-align: -0.1em;
   font-size:16px;

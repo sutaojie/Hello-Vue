@@ -3,14 +3,28 @@
         <nav>
             <ol>
                 <li v-for="(item, index) in resume.config" :class="{active: item.field === selected}" @click="selected = item.field">
-                    <svg>
+                    <svg :class="{icon: item.field === selected}">
                         <use :xlink:href="`#icon-${item.icon}`"></use>
                     </svg>    
                 </li>
            </ol>
         </nav>
         <ol class="panels">
-            <li v-for="item in resume.config" v-show="item.field === selected">{{resume[item.field]}}</li>
+            <li v-for="item in resume.config" v-show="item.field === selected">
+                <div v-if='resume[item.field] instanceof Array'>
+                   <div class="subitem" v-for="subitem in resume[item.field]">
+                       <div class="resumeField" v-for='(value, key) in subitem'>
+                            <label >{{key}}</label>
+                            <input type="text" v-bind:value="value">
+                        </div>
+                    </div> 
+                </div>
+                <div v-else class="resumeField" v-for="(value, key) in resume[item.field]">
+                   <label >{{key}}</label>
+                    <input type="text" v-model="resume[item.field][key]"> 
+                </div>
+                
+            </li>
         </ol>
    </div>
 </template>
@@ -34,11 +48,23 @@ export default {
                     city:'2',
                     title:'3'
                 },
-                'work history':[],
-                education: [],
-                projects: [],
-                awards: [],
-                contacts: [],
+                'work history':[
+                    {company:'AL', content: '我的第二份工作是'},
+                    {company:'TX', content: '我的第一份工作是'}
+                    ],
+                education: [
+                    {school: 'AL', content: '文字'}
+                ],
+                projects: [
+                    {name:'project A', content:'xxx'}
+                ],
+                awards: [
+                    {name:'awards A', content:'yyy'}
+                ],
+                contacts: [
+                    {contact:'phone', content:'1221313'},
+                    {contact:'QQ', content:'1523423'}
+                ],
             }
         }
     }
@@ -70,12 +96,36 @@ export default {
              }
          }
      }
+     > .panels{
+         flex-grow: 1;
+         > li{
+             padding:24px;
+         }
+     }
      svg.icon{
-         width: 24px;
-         height: 24px;
+         width: 34px;
+         height: 34px;
      }
    }
    ol{
        list-style:none;
+   }
+   .resumeField{
+       >label{
+           display: block;
+       }
+       input[type=text]{
+           margin:16px 0;
+           border:1px solid #ddd;
+           box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+           width:100%;
+           height:40px;
+           padding: 0 8px;
+       }
+   }
+   hr{
+       border:none;
+       border-top:1px solid #ddd;
+       margin:24px 0;
    }
 </style>
