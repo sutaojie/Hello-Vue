@@ -41,6 +41,9 @@ export default new Vuex.Store({
     mutations: {
         increment(state){
             state.count += 1
+        },
+        switchTab(state, payload){
+            state.selected = payload
         }
     }
 })
