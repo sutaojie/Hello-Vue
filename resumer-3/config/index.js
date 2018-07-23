@@ -50,7 +50,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/sutaojie/resumer/dist',
+    assetsPublicPath: '/Hello-Vue/resumer-3/dist',
 
     /**
      * Source Maps
