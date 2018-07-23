@@ -17,6 +17,7 @@
                             <label >{{key}}</label>
                             <input type="text" v-bind:value="value">
                         </div>
+                        <hr>
                     </div> 
                 </div>
                 <div v-else class="resumeField" v-for="(value, key) in resume[item.field]">
