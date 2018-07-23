@@ -2,6 +2,10 @@
     <div id="topbar">
         <div class="wrapper">
             <span class="logo">Resumer</span>
+            <div class="actions">
+                <button class="primary">保存</button>
+                <button>保存</button>
+            </div>
         </div>
     </div>
 </template>
@@ -12,9 +16,9 @@ export default {
 </script>
 <style lang="scss" scoped>
     #topbar{
-        background-color: peru;
+        background-color: white;
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
-        .wrapper{
+        >.wrapper{
             min-width:1024px;
             max-width:1440px;
             margin:0 auto;
@@ -27,6 +31,22 @@ export default {
         .logo{
             font-size:24px;
             color:#000000;
+        }
+        button{
+            width:72px;
+            height: 32px;
+            border:none;
+            cursor:pointer;
+            font-size:18px;
+            background-color: #dddddd;
+            color:#222;
+            &:hover{
+                box-shadow: 1px 1px 1px hsla(0, 0, 0, 0.50);
+            }
+            &.primary{
+                background: #02af5f;
+                color:white;
+            }
         }
     }
 </style>
