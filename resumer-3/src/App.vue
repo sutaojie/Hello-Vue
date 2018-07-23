@@ -34,7 +34,7 @@ export default {
     flex-direction: column;
     background-color: #EAEBEC;
     
-    main{
+    >main{
       min-width:1024px;
       // max-width:1440px;
       width:100%;
