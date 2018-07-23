@@ -2,7 +2,11 @@
     <div id="resumeEditor">
         <nav>
             <ol>
-                <li v-for="(item, index) in resume.config" :class="{active: item.field === selected}" @click="selected = item.field">{{item.icon}}</li>
+                <li v-for="(item, index) in resume.config" :class="{active: item.field === selected}" @click="selected = item.field">
+                    <svg>
+                        <use :xlink:href="`#icon-${item.icon}`"></use>
+                    </svg>    
+                </li>
            </ol>
         </nav>
         <ol class="panels">
@@ -65,6 +69,10 @@ export default {
                  }
              }
          }
+     }
+     svg.icon{
+         width: 24px;
+         height: 24px;
      }
    }
    ol{
