@@ -33,21 +33,26 @@ export default {
     display: flex;
     flex-direction: column;
     background-color: #EAEBEC;
+    
     main{
       min-width:1024px;
-      max-width:1440px;
+      // max-width:1440px;
+      width:100%;
       margin-top:16px;
       margin-bottom:16px;
       display: flex;
       flex-grow: 1;
-      justify-content: space-around;
+      justify-content:space-between;
+      align-content:center;
+      padding:0 16px;
     }
     #resumeEditor{
       width:35%;
       background-color: #444444;
     }
     #resumePreview{
-      width:61%;
+      flex-grow:1;
+      margin-left:16px;
       background-color: #777;
     }
   }
