@@ -11,7 +11,7 @@
         </nav>
         <ol class="panels">
             <li v-for="item in resume.config" v-show="item.field === selected">
-                <div v-if='resume[item.field] instanceof Array'>
+                <div v-if='resume[item.field] instanceof Array' >
                    <div class="subitem" v-for="subitem in resume[item.field]">
                        <div class="resumeField" v-for='(value, key) in subitem'>
                             <label >{{key}}</label>
