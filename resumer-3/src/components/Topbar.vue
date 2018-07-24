@@ -18,8 +18,8 @@
         <MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible = false">
             <SignUpForm @success='signIn($event)'/>
         </MyDialog>
-            <MyDialog title="登录" :visible="signInDialogVisible" @close="signInDialogVisible = false">
-            <SignInForm />
+        <MyDialog title="登录" :visible="signInDialogVisible" @close="signInDialogVisible = false">
+            <SignInForm @success='singIn($event)'/>
         </MyDialog>
  
     </div>
@@ -27,7 +27,7 @@
 <script>
 import MyDialog from './MyDialog.vue'
 import SignUpForm from './SignUpForm.vue'
-import SignInForm from './SignInForm'
+import SignInForm from './SignInForm.vue'
 import AV from '../lib/leancloud'
 export default {
     name:'Topbar',
@@ -56,6 +56,7 @@ export default {
             this.$store.commit('removeUser')
         },
         signIn(user){
+            this.signInDialogVisible = false
             this.signUpDialogVisible = false
             this.$store.commit('setUser', user)
         },
