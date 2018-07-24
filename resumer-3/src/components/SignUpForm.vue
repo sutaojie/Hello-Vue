@@ -19,6 +19,7 @@
 <script>
 import AV from '../lib/leancloud'
 import getErrorMessage from '../lib/getErrorMessage'
+import getAVUser from '../lib/getAVUser'
 export default {
     name:'SignUpForm',
     data(){
@@ -41,11 +42,8 @@ export default {
             user.setUsername(username);
             // 设置密码
             user.setPassword(password);
-            user.signUp().then( (loggedInUser)=> {
-                this.$emit('success', {
-                    username: loggedInUser.attributes.username,
-                    id: loggedInUser.id
-                })
+            user.signUp().then( ()=> {
+                this.$emit('success', getAVUser()) 
             },  (error) =>{
                 this.errorMessage = getErrorMessage(error)
             });
