@@ -1,5 +1,6 @@
 <template>
-  <div class="page">
+<div>
+ <div class="page">
     <header>
       <Topbar/>
     </header>
@@ -8,6 +9,7 @@
       <ResumePreview/>
     </main>
   </div>
+</div>
 </template>
 
 <script>

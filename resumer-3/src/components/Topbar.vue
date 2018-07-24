@@ -3,15 +3,27 @@
         <div class="wrapper">
             <span class="logo">Resumer</span>
             <div class="actions">
+                <a class="button primary" href="#" @click.prevent='signUpDialogVisible = true'>注册</a>
+                <MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible = false">我就是 solt 内容</MyDialog>
+                <a class="button" href="#">登录</a>
                 <button class="primary">保存</button>
-                <button>保存</button>
+                <button>预览</button>
             </div>
         </div>
     </div>
 </template>
 <script>
+import MyDialog from './MyDialog.vue'
 export default {
-    name:'Topbar'
+    name:'Topbar',
+    data(){
+        return{
+            signUpDialogVisible:true
+        }
+    },
+    components:{
+        MyDialog
+    }
 }
 </script>
 <style lang="scss" scoped>
@@ -32,7 +44,7 @@ export default {
             font-size:24px;
             color:#000000;
         }
-        button{
+        .button{
             width:72px;
             height: 32px;
             border:none;
@@ -40,6 +52,11 @@ export default {
             font-size:18px;
             background-color: #dddddd;
             color:#222;
+            text-decoration: none;
+            display: inline-flex;
+            justify-content: center;
+            align-content: center;
+            vertical-align:middle;
             &:hover{
                 box-shadow: 1px 1px 1px hsla(0, 0, 0, 0.50);
             }
