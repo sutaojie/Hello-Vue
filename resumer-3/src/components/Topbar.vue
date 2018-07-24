@@ -3,16 +3,21 @@
         <div class="wrapper">
             <span class="logo">Resumer</span>
             <div class="actions">
-                <span>{{user}}</span>
-                <a class="button primary" href="#" @click.prevent='signUpDialogVisible = true'>注册</a>
-                <MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible = false">
-                    <SignUpForm @success='login($event)'/>
-                </MyDialog>
-                <a class="button" href="#">登录</a>
-                <button class="primary">保存</button>
-                <button>预览</button>
+                <div v-if="logined" class="userActions">
+                    <span>你好，{{user.username}}</span>
+                    <a href="#" class="button">登出</a>
+                </div>
+                <div v-else class="userActions">
+                    <a class="button primary" href="#" @click.prevent='signUpDialogVisible = true'>注册</a>
+                    <MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible = false">
+                        <SignUpForm @success='login($event)'/>
+                    </MyDialog>
+                    <a class="button" href="#">登录</a>
+                    <button class="primary">保存</button>
+                    <button>预览</button>
+                </div>
             </div>
-        </div>
+       </div>
     </div>
 </template>
 <script>
@@ -22,13 +27,16 @@ export default {
     name:'Topbar',
     data(){
         return{
-            signUpDialogVisible:true
+            signUpDialogVisible:false
         }
     },
     computed:{
         user(){
             return this.$store.state.user
-        } 
+        },
+        logined(){
+            return this.user.id
+        }
     },
     components:{
         MyDialog,
@@ -82,6 +90,12 @@ export default {
                 color:white;
             }
         }
+       .actions{
+           display: flex;
+           .userActions{
+               margin-right: 3em;
+           }
+       } 
     }
 </style>
 
