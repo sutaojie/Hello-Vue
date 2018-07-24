@@ -49,9 +49,11 @@ export default {
     }
     #resumeEditor{
       width:35%;
+      flex-grow:1;
       background-color: #444444;
     }
     #resumePreview{
+      width:64%;
       flex-grow:1;
       margin-left:16px;
       background-color: #777;

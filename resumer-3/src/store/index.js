@@ -40,7 +40,7 @@ export default new Vuex.Store({
                     {name:'project A', content:'xxx'}
                 ],
                 awards: [
-                    {name:'awards A', content:'yyy'}
+                    {name:'少年先锋队', content:'小学生'}
                 ],
                 contacts: [
                     {contact:'phone', content:'1221313'},
