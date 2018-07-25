@@ -2,15 +2,15 @@
     <div>
         <form @submit.prevent="signUp">
             <div class="row">
-                <label >用户名</label>
-                <input type="text" v-model="formData.username" required>
+                <input type="text" placeholder="账号" v-model="formData.username" required>
             </div>
             <div class="row">
-                <label >密码</label>
-                <input type="password" v-model="formData.password" required>
+                <input type="password" placeholder="密码" v-model="formData.password" required>
             </div>
             <div class="actions">
-                <input type="submit" value="提交">
+                 <button type="submit" class="button button-glow button-border button-rounded button-primary"> 注册
+                </button>
+                <br>
                 <span class="errorMessage">{{errorMessage}}</span>
             </div>
         </form>
@@ -53,4 +53,34 @@ export default {
     }
 }
 </script>
+<style lang="scss" scoped>
+@import '../../static/buttons.css';
+.row{
+    width:80%;
+    height: 20px;
+    margin: 20px auto;
+    input{
+        padding: 10px;
+    height: 1.7em;
+    font-size: 1.2em;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: 0;
+    &:focus{
+    border-bottom-color: #869091;
+    }
+    }
+    
+}
+.actions{
+        display: flex;
+        justify-content: center;
+        
+        > button{
+        margin-top: 20px;
+        }
+    }
+
+</style>
+
 

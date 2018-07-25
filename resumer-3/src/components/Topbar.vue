@@ -10,8 +10,8 @@
                 <div v-else class="userActions">
                     <a class="button primary" href="#" @click.prevent='signUpDialogVisible = true'>注册</a>
                    <a class="button" href="#" @click.prevent='signInDialogVisible = true'>登录</a>
-                   <button class="primary">保存</button>
-                    <button>预览</button>
+                   <a class="button">保存</a>
+                    <a class="button">预览</a>
                 </div>
             </div>
        </div>
@@ -34,7 +34,7 @@ export default {
     data(){
         return{
             signUpDialogVisible:false,
-            signInDialogVisible:false
+            signInDialogVisible:true
         }
     },
     computed:{
