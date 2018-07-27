@@ -19,37 +19,32 @@ export default new Vuex.Store({
                     {field: 'contacts', icon: 'phone'},
                 ],
                 profile:{
-                    name:'wang',
-                    city:'anhui',
-                    title:'resume',
-                    birthday:'1995-3-3'
+                    name:'苏赵勇',
+                    city:'安徽',
+                    title:'这是我的简历',
+                    birthday:'1995-3-13'
                 },
                 workHistory:[ 
                 {
-                    company: '鸡飞狗跳公司', 
-                    content: `公司总部设在XXXX区，先后在北京、上海成立分公司。专注于移动XXX领域，主打产品XXXXX，它将资讯、报纸、杂志、图片、微信等众多内容，按照用户意愿聚合到一起，实现深度个性化 定制。
-                    我的主要工作如下:
-                    1. 完成既定产品需求。
-                    2. 修复 bug。`
-                },
-                {
-                    company: '狗急跳墙责任有限公司', 
-                    content: `公司总部设在XXXX区，先后在北京、上海成立分公司。专注于移动XXX领域，主打产品XXXXX，它将资讯、报纸、杂志、图片、微信等众多内容，按照用户意愿聚合到一起，实现深度个性化 定制。
-                    我的主要工作如下:1. 完成既定产品需求。2. 修复 bug`
+                    company: '杭州碧图电子科技有限公司', 
+                    content: `工作内容和编程不相关。在工作之余的时间里，自学前端半年，喜欢逛技术之类的网站，比如： statck overflow, V2EX, github, CSS-Ticks, 阮一峰博客等。
+                    遇到不明白的地方或在项目中出现报错，第一反应是去查阅文档说明，其次去 Google, statck overflow，github 中参考解决方案。 
+                    不断练习动手能力，看的新技术敢于尝试。
+                    `
                 }
                 ],
                 education: [
-                    { school: '黄志诚警官大学', content: '本科' }, 
+                    { school: '安徽财贸职业技术学院', content: '专科' }, 
                 ],
                 projects: [
-                    {name:'project A', content:'xxx'}
+                    {name:'', content:'xxx'}
                 ],
                 awards: [
-                    {name:'少年先锋队', content:'小学生'}
+                    {name:'再来一瓶', content:'自己本身中奖绝缘体，T_T'}
                 ],
                 contacts: [
-                    {contact:'phone', content:'1221313'},
-                    {contact:'QQ', content:'1523423'}
+                    {contact:'手机', content:'17682488600'},
+                    {contact:'QQ', content:'1522006120'}
                 ],
             }
     },
